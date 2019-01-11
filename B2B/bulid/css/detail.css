@@ -1,0 +1,88 @@
+body{
+    background: #fff;
+}
+.selGuige{
+    color: #000;border: 1px solid #e1e1e1;padding: 5px 8px;display: inline-block;
+    margin-right: 3px;
+    cursor: pointer;
+}
+.selGuige.active{
+    border: 1px solid #FF4502;
+    color: #FF4502;
+}
+
+.right_list{
+    box-sizing: border-box;
+    border: 1px solid #f1f1f1;
+    width: 190px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ptrx>li{
+    position: relative;
+    margin-top: 2px;
+}
+.ptrx>li img{
+    box-sizing: border-box;
+}
+.ptrx .sp_r{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    height: 37px;
+    line-height: 37px;
+    background: rgba(0,0,0,.2);
+}
+.right_list_head{
+    background: #eee;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+}
+.ptrx_jt img{
+    position: absolute;
+    width: 20px;
+}
+.ptrx_jt img:hover{
+    cursor: pointer;
+    width: 25px;
+}
+#ptrxx{
+    height: 566px;
+    overflow: hidden;
+    position: relative;
+}
+.jt_box{
+    display: inline-block;
+    margin-top: 5px;
+    width: 30px;
+    height: 21px;
+}
+.ptrx{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.toolimg{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+#tooltip{
+    position:absolute;
+    border:1px solid #ccc;
+    background:#333;
+    padding:2px;
+    display:none;
+    color:#fff;
+}
+.bFind-wrapper-top,
+.bsBox{
+    box-sizing: content-box;
+}

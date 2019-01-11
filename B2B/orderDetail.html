@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>同致相伴，一路顺畅</title>
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="bulid/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bulid/css/login.css">
+    <link rel="stylesheet" href="bulid/css/foot.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="bulid/css/base.css">
+    <link rel="stylesheet" href="bulid/css/index.css">
+    <link rel="stylesheet" href="bulid/css/brand.css">
+    <link rel="stylesheet" href="bulid/css/drawer.css">
+    <link rel="stylesheet" href="bulid/css/myself.css">
+    <script src="bulid/js/hm.baidu.min.js"></script>
+</head>
+<body>
+<!--内容-->
+<div id="index" v-cloak class="container-fluid" style="padding: 0;">
+    <jxky-header></jxky-header>
+    <!--导航-->
+    <jxky-nav title="myself"></jxky-nav>
+    <section>
+        <table class="table" style="margin-top: 20px">
+            <thead>
+            <tr>
+                <th width="16%" style="text-align: left"><span
+                        style="border-left: 3px solid #D5282C;padding-left: 8px;display: inline-block;width: 75px;text-align: left;margin-left: 10px;">订单详情</span>
+                </th>
+                <th width="40%">商品名称</th>
+                <th width="11%">单价</th>
+                <th width="11%">数量</th>
+                <th width="11%">小计</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="font-size: 1.1em;border: none">
+                <td colspan="6" style="text-align: left;">
+                    <span style="display: inline-block;min-width: 200px;color: #D5282C;margin-top: 15px;margin-left: 25px;">
+                            {{list.shop_name}}
+                        <i class="fa fa-commenting-o hoverOpacity" style="color: #D5282C" title="客服"
+                           aria-hidden="true"></i>
+                            <span style="font-size: .8em;color: #666">（{{list.coupon_title}}）</span>
+
+                        </span>
+                </td>
+            </tr>
+            <tr v-for="item in list.child_data" style="border: 1px solid #ddd;border-top: none;background: #F5F5F5">
+                <td style="text-align: left;">
+                    <div style="width: 100px;height: 100px;padding: 2px;overflow: hidden;display: inline-block;background: #fff;margin-left: 25px;">
+                        <img style="width: 100%;height: 100%;" :src="item.img_url" alt="">
+                    </div>
+                </td>
+                <td style="text-align: left">
+                    <div style="display: inline-block;width: 350px;overflow: hidden;vertical-align: top;padding: 10px;">
+                        <div style="height: 65px;overflow: hidden;">
+                            <span class="hover_head" @click="vm.dorShopDetail(item.product_id,'')">{{item.product_title}}</span>
+                        </div>
+                        <div v-if="item.motion_id!=0" style="display: inline-block;">
+                            <div style="display: inline-block;color: #aaa">促销信息 <span
+                                    style="color: #fff;background: #D5282C;padding: 0 8px;">{{item.reduce_title}}</span>
+                            </div>
+                            <div v-if="item.gift.length!=0"
+                                 style="border: 1px solid #D5282C;padding: 3px;display: inline-block;color: #D5282C">
+                                赠：<img v-for="its in item.gift" class="toolimg" :alt="its.product_title"
+                                       :src="its.product_img"/></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div style="color: #000;font-size: 1.1em;">￥<span class="price">{{item.real_price}}</span></div>
+                </td>
+                <td>{{item.quantity}}</td>
+                <td>
+                    <div style="color: #D5282C;font-size: 1.1em;">￥<span class="priceXj">{{(item.product_sum-item.amount_motion).toFixed(2)}}</span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="dis_flex">
+        <div>
+            <span style="min-width: 200px;display: inline-block;">物流信息：<span style="color: #F08A40">{{list.status}}</span></span>
+            <span style="min-width: 300px;display: inline-block;">物流单号：<span
+                    style="color: #F08A40">{{list.order_seqno}}</span></span>
+        </div>
+        <div>
+            <div>
+                <div style="width: 100px;text-align: right;display: inline-block;">支付方式：</div>
+                <span style="color: #D5282C;font-weight: bold;display: inline-block;padding-left: 15px;min-width: 90px;">{{list.payment_type}}</span>
+            </div>
+            <div style="padding: 2px 0;">
+                <div style="display: inline-block;">
+                    <div style="width: 100px;text-align: right;display: inline-block;">商品总金额：</div>
+                    <div style="color: #D5282C;display: inline-block;padding-left: 15px;min-width: 90px;">
+                        ￥{{list.amount_pay_able-list.amount_offset}}
+                    </div>
+                </div>
+                <div style="display: inline-block;">
+                    <div style="width: 100px;text-align: right;display: inline-block;">运费：</div>
+                    <div style="color: #D5282C;display: inline-block;padding-left: 15px;min-width: 90px;">
+                        ￥{{list.amount_offset}}
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 2px 0;">
+                <div style="display: inline-block;">
+                    <div style="width: 100px;text-align: right;display: inline-block;">余额抵扣：</div>
+                    <div style="color: #D5282C;display: inline-block;padding-left: 15px;min-width: 90px;">-￥0.00</div>
+                </div>
+                <div style="display: inline-block;">
+                    <div style="width: 100px;text-align: right;display: inline-block;">优惠券：</div>
+                    <div style="color: #D5282C;display: inline-block;padding-left: 15px;min-width: 90px;">-￥0.00</div>
+                </div>
+            </div>
+            <div v-if="list.order_type!='到店自取'" style="text-align: right;padding: 2px 0;">
+                配送至：{{list.address}}
+            </div>
+            <div v-if="list.order_type!='到店自取'" style="text-align: right;padding: 2px 0;">
+                收货人：{{list.name}} {{list.mobile}}
+            </div>
+            <div v-if="list.order_type=='到店自取'" style="text-align: right;padding: 2px 0;">
+                配送方式：<span style="color: #D5282C">{{list.order_type}}</span>
+            </div>
+            <div class="cr" style="padding: 2px 0;">
+                <div class="fr" style="color: #D5282C;">
+                    实付款：<span style="font-size: 2.2em;font-weight: bold">￥{{list.amount_pay_able}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <jxky-friend></jxky-friend>
+    <!--foot-->
+    <div id="foot">
+        <jxky-foot></jxky-foot>
+    </div>
+</div>
+
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+<script src="vue/dist/vue.min.js"></script>
+<script src="component/comp.min.js"></script>
+<script src="bulid/layer/layer.min.js"></script>
+<!--列表滚动-->
+<script src="bulid/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+<script src="bulid/src/orderDetail.min.js"></script>
+</body>
+</html>

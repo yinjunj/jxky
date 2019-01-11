@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>同致相伴，一路顺畅</title>
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="bulid/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bulid/css/login.css">
+    <link rel="stylesheet" href="bulid/css/foot.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="bulid/css/base.css">
+    <link rel="stylesheet" href="bulid/css/index.css">
+    <link rel="stylesheet" href="bulid/css/brand.css">
+    <link rel="stylesheet" href="bulid/css/drawer.css">
+    <script src="bulid/js/hm.baidu.min.js"></script>
+</head>
+<body>
+<!--内容-->
+<div id="index" v-cloak class="container-fluid" style="padding: 0;">
+    <jxky-header></jxky-header>
+    <jxky-drawer></jxky-drawer>
+    <!--导航-->
+    <jxky-nav></jxky-nav>
+
+
+    <div style="min-height: 530px">
+
+    </div>
+
+
+
+
+
+
+
+    <jxky-friend></jxky-friend>
+    <!--foot-->
+    <div id="foot">
+        <jxky-foot></jxky-foot>
+    </div>
+</div>
+
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+<script src="vue/dist/vue.min.js"></script>
+<script src="component/comp.min.js"></script>
+<script src="bulid/layer/layer.min.js"></script>
+<!--列表滚动-->
+<script src="bulid/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+<script>
+    new Vue({
+        el: "#index",
+        data:{
+          show:false,
+        },
+        mounted: function () {
+
+        },
+        methods:{
+
+        }
+    });
+
+</script>
+</body>
+</html>

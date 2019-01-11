@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同致相伴，一路顺畅</title>
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="bulid/css/base.css">
+    <link rel="stylesheet" href="bulid/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bulid/css/login.css">
+    <link rel="stylesheet" href="bulid/css/foot.css">
+    <link rel="stylesheet" href="bulid/css/jigsaw.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="bulid/js/hm.baidu.min.js"></script>
+</head>
+<body>
+
+<div id="contain">
+    <div style="min-height: 800px;min-width: 1230px;">
+        <section>
+            <h1 @click="vm.clickIndex" style="margin: 10px 20px;width: 200px;cursor: pointer;"><img src="bulid/img/logoL.png" alt=""></h1>
+        </section>
+        <div class="pr" id="bg">
+            <div id="poaLogin">
+                <jxky-login></jxky-login>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <jxky-foot></jxky-foot>
+    </div>
+</div>
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="bulid/js/Lunbo.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="bulid/js/md5.min.js"></script>
+<script src="vue/dist/vue.min.js"></script>
+<script src="component/comp.min.js"></script>
+<script src="bulid/layer/layer.min.js"></script>
+<script src="bulid/js/jigsaw.js"></script>
+    <script>
+        new Vue({
+            el: "#contain",
+        });
+    </script>
+</body>
+</html>

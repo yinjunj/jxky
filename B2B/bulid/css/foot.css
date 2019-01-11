@@ -1,0 +1,17 @@
+#foot{
+    border-top: 3px solid #ccc;
+    background: #EAEAEA;
+    min-width: 1230px;
+}
+.footbg {
+    padding: 18px 0;
+    width: 1230px;
+    margin: 0 auto;
+}
+.moarwe nav {width: 24%; margin: 0 auto; }
+.moarwe nav a { display: block;  border: 1px solid #D2D2D2;  float: left;  font-size: 12px;  height: 50px;  line-height: 20px;  margin: 6px;  padding: 0;  width: 120px;  overflow: hidden;  }
+.moarwe nav a .p2 { padding: 5px 3px 0;  width: 72px;  color: #515151;  font-size: 12px;  }
+.moarwe nav a .ps {  padding: 3px;  }
+.oiwe .onexs {  height: 40px;  line-height: 40px;  text-align: center;  margin-top: 10px;  }
+.onexs p a {cursor: pointer; color: #828282;  font-size: 12px;  }
+.onexs p a:hover{color: red;}

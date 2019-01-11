@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”keywords” content=”同致相伴,一路顺畅，汽车养护，机油，润滑油，洗护，保养”/>      <!--页面关键词-->
+    <title>同致相伴，一路顺畅</title>
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="bulid/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bulid/css/login.css">
+    <link rel="stylesheet" href="bulid/css/foot.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="bulid/css/base.css">
+    <link rel="stylesheet" href="bulid/css/index.css">
+    <link rel="stylesheet" href="bulid/css/brand.css">
+    <link rel="stylesheet" href="bulid/css/drawer.css">
+    <link rel="stylesheet" href="bulid/css/glass.css">
+    <link rel="stylesheet" href="bulid/css/detail.css">
+    <link rel="stylesheet" href="bulid/css/jigsaw.css">
+    <link rel="stylesheet" href="bulid/layui/css/layui.css">
+    <script src="bulid/js/hm.baidu.min.js"></script>
+    <style>
+        body{
+            background: #f2f2f2;
+        }
+        .paySure {
+            border: 1px solid #eee;
+            background: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--内容-->
+<div id="index" v-cloak class="container-fluid" style="padding: 0;">
+    <h1 v-show="false">同致相伴，一路顺畅</h1><!--分享标题-->
+    <h2 v-show="false">同致相伴,一路顺畅，汽车养护，机油，润滑油，洗护，保养</h2><!--分享内容-->
+    <jxky-header></jxky-header>
+    <jxky-drawer></jxky-drawer>
+    <!--导航-->
+    <jxky-nav></jxky-nav>
+    <section><img src="bulid/img/detailCrowd.png" alt=""></section>
+    <div v-if="crowdShow" style="min-height: 500px;line-height: 500px;font-size: 26px;color: #999;font-weight: bold;text-align: center">下一期众筹酝酿中，敬请期待！！</div>
+    <div v-else style="background: url('bulid/img/detailBg.png') 100% 100% no-repeat;background-size: contain;background-position: top;">
+        <crowd-temp v-for="item in list" :list="item"></crowd-temp>
+    </div>
+
+
+
+    <jxky-friend></jxky-friend>
+    <div id="loginModel" class="dis_no">
+        <jxky-login title="model"></jxky-login>
+    </div>
+    <!--foot-->
+    <div id="foot">
+        <jxky-foot></jxky-foot>
+    </div>
+</div>
+
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="bulid/layer/layer.min.js"></script>
+<script src="bulid/layui/layui.min.js"></script>
+<script src="bulid/js/md5.min.js"></script>
+<script src="bulid/js/jigsaw.js"></script>
+<script src="bulid/js/Lunbo.min.js"></script>
+<script src="bulid/js/glassy.min.js"></script>
+<script src="bulid/js/fileUpload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+<script src="vue/dist/vue.min.js"></script>
+<script src="component/comp.min.js"></script>
+<!--列表滚动-->
+<script src="bulid/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+<script src="bulid/src/detailCrowd.min.js"></script>
+</body>
+</html>

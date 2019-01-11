@@ -1,0 +1,59 @@
+body{
+    background: #fff;
+}
+.borMid{
+    border-bottom: 1px solid #eee;
+}
+.sure.active>.borMid{
+    border-bottom: 1px solid #ff4502;
+}
+.paySure{
+    border: 1px solid #eee;padding: 5px 8px;float: left;background: #fff;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.paySure>div{
+    width: 190px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.toolimg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#tooltip{
+    position:absolute;
+    border:1px solid #D5282C;
+    background: #fff;
+    padding:2px;
+    display:none;
+    color:#000;
+}
+.table tr{
+    padding: 0 10px;
+}
+.table th{
+    background: #EEE;
+    color: #000;
+    text-align: center;
+}
+.table>tbody{
+    border: none;
+}
+.table>tbody+tbody {
+    border: none;
+}
+tbody.kg{
+    border: none!important;
+    height: 50px;
+    width: 100%;
+    padding: 20px;
+}
+.table>tbody>tr>td{
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+}

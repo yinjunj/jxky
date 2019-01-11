@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>同致相伴，一路顺畅</title>
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="bulid/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bulid/css/login.css">
+    <link rel="stylesheet" href="bulid/css/foot.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="bulid/css/base.css">
+    <link rel="stylesheet" href="bulid/css/index.css">
+    <link rel="stylesheet" href="bulid/css/brand.css">
+    <link rel="stylesheet" href="bulid/css/messing.css">
+    <link rel="stylesheet" href="bulid/css/jigsaw.css">
+    <script src="bulid/js/hm.baidu.min.js"></script>
+</head>
+<body style="background: #fff">
+<!--内容-->
+<div id="index" v-cloak class="container-fluid" style="padding: 0;">
+    <jxky-header></jxky-header>
+    <!--导航-->
+    <jxky-nav></jxky-nav>
+
+    <section style="min-height: 530px;color: #000; margin-top: 15px;" class="dis_flex">
+        <div>
+            <h3 style="font-weight: bold">热门问题</h3>
+            <ul style="list-style: disc;padding-left: 16px;color: #4984CF;">
+                <li v-for="item in hotlist" style="padding: 5px 0;"><a @click="mess(item.id)" href="#" class="hover_a"
+                                                                       style="display: inline-block;width: 280px;overflow: hidden;height: 17px;">{{item.title}}</a>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 900px;">
+            <ul id="my-tab" style="width: 100%;font-size: 1.6em;font-weight: bold;border-bottom: 1px solid #ddd"
+                class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" @click="lists(listHead[0].id)"
+                                                          aria-controls="home" role="tab"
+                                                          data-toggle="tab">{{listHead[0].title}}</a></li>
+                <li style="color: #e5e5e5;padding: 10px 0;">|</li>
+                <li role="presentation"><a href="#home" aria-controls="home" @click="lists(listHead[1].id)" role="tab"
+                                           data-toggle="tab">{{listHead[1].title}}</a>
+                </li>
+                <li style="color: #e5e5e5;padding: 10px 0;">|</li>
+                <li role="presentation"><a href="#home" aria-controls="home" @click="lists(listHead[2].id)" role="tab"
+                                           data-toggle="tab">{{listHead[2].title}}</a>
+                </li>
+                <li>
+                    <div class="input-group fr" style="width: 390px;margin-left: 133px;">
+                        <input v-model="textR" @keyup.13="research" type="text" class="form-control"
+                               style="border: 2px solid #ddd;border-radius: 20px"
+                               placeholder="搜索问题">
+                        <div @click="research" class="input-group-addon hoverOpacity"
+                             style="color: #000;background: #ddd;border: none;border-radius: 20px;padding: 0 20px;">搜 索
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div v-if="show" class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="list-group">
+                        <a v-if="more||ind<10" v-for="(item,ind) in list" href="#" @click="mess(item.id)" class="list-group-item">
+                            {{item.title}}
+                            <span class="fr" style="color: #949494">
+                                <span style="margin-left: 20px;">{{item.add_time}}</span>
+                            </span>
+                        </a>
+                        <div style="font-size: 2em;text-align: center;">
+                             <span v-if="!list.length">
+                                暂无任何信息
+                            </span>
+                        </div>
+                        <span @click="more=true" v-if="list.length>10&&!more" style="color: #D5282C;text-align: center;margin-top: 10px;background: #F7F7F7"
+                              class="list-group-item hoverOpacity">
+                          + 更多问题
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div v-else>
+                <div class="cr" style="margin-top: 5px;color: #949494">
+                    <span @click="returnMess" class="hoverRed fr">&lt; 返回 &nbsp;</span>
+                </div>
+                <div style="border: 1px solid #ddd;border-radius: 3px;height: 580px;padding: 20px;">
+                    <div class="tc">
+                        <h5>{{detail.title}}</h5>
+                        <div style="background: #EEE;padding: 6px 0;">来源：{{detail.shop_name}} &nbsp;&nbsp;
+                            时间：{{detail.add_time}}
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px solid #ddd;overflow: auto;height: 400px;"
+                         v-html="detail.content"></div>
+                    <!--<div class="cr" style="color: #949494;margin-top: 15px;">-->
+                        <!--<div class="fl hoverRed">-->
+                            <!--上一篇：春节晚会-->
+                        <!--</div>-->
+                        <!--<div class="fr hoverRed">-->
+                            <!--下一篇：春节晚会-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <jxky-friend></jxky-friend>
+    <div id="loginModel" class="dis_no">
+        <jxky-login title="model"></jxky-login>
+    </div>
+    <!--foot-->
+    <div id="foot">
+        <jxky-foot></jxky-foot>
+    </div>
+</div>
+
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bulid/js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script src="http://cdn.bootcss.com/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+<script src="vue/dist/vue.min.js"></script>
+<script src="bulid/js/md5.min.js"></script>
+<script src="bulid/js/jigsaw.js"></script>
+<script src="component/comp.min.js"></script>
+<script src="bulid/layer/layer.min.js"></script>
+<!--列表滚动-->
+<script src="bulid/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+<script src="bulid/src/messing.min.js"></script>
+</body>
+</html>

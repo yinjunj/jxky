@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="bulid/img/defaultLogo.png" type="image/x-icon"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 分享显示的标题-->
+    <meta itemprop="name" content="欢迎来到同致相伴养护采购平台！" />
+    <!-- 分享显示的缩略图-->
+    <meta itemprop="image" content="bulid/img/defaultLogo.png" />
+    <!-- 分享显示的简介-->
+    <meta name="description" itemprop="description" content="同致相伴,一路顺畅，汽车养护，机油，润滑油，洗护，保养" />
+    <title>同致相伴App下载页</title>
+    <script src="bulid/js/hm.baidu.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 90%;
+            margin-bottom: -4px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img style="width: 100%;" src="bulid/img/phoneApp.png" alt="">
+</div>
+<div style="position: fixed;display: flex;justify-content: space-around;bottom: 3%;width: 90%;left: 5%;">
+    <span style="width: 50%;text-align: center" onclick="openHtml('ios')"><img src="bulid/img/iosApp.png" alt=""></span>
+    <span style="width: 50%;text-align: center" onclick="openHtml('adr')"><img src="bulid/img/andApp.png" alt=""></span>
+</div>
+<script>
+    function openHtml(e) {
+        var ua = window.navigator.userAgent;
+          if(!!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+            // ios端        
+              if(e=='ios'){
+                  window.location.href='https://itunes.apple.com/cn/app/id1420433129?mt=8';
+              }
+
+        } else if(ua.indexOf('Android') > -1 || ua.indexOf('Adr') > -1) {
+                  // android端        
+              if(e=='adr'){
+                  window.location.href='download/B2B-Android.apk';
+              }   
+        }
+    }
+
+</script>
+</body>
+</html>

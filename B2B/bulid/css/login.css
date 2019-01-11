@@ -1,0 +1,150 @@
+#borOut{
+    background: transparent;
+    border: 1px solid #f3ffff;
+    border-radius: 4px;
+}
+#box{
+    background: #fff;
+    margin: 8px;
+    padding: 0 18px;
+    padding-top: 50px;
+    border-radius: 7px;
+    width: 300px;
+    height: 388px;
+    position: relative;
+    overflow: hidden;
+}
+#poaLogin{
+    position: absolute;
+    top: 80px;
+    right: 15%;
+}
+#bg{
+    position: relative;
+    width: 100%;
+    height: 612px;
+    background: url("../img/loginBg.png") no-repeat;
+    background-size: cover;
+}
+.iBor{
+    display: inline-block;
+    width: 41px;
+    height: 41px;
+    font-size: 23px;
+    line-height: 42px;
+    text-align: center;
+    color: #D4282D;
+    border: 1px solid #e1e1e1;
+}
+.borBT{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 23px;
+    vertical-align: middle;
+    margin-left: 8px;
+    line-height: 30px;
+    text-align: center;
+    color: #D4282D;
+    margin-bottom: 6px;
+}
+.loginInput{
+    margin-left: -5px;
+    height: 41px;
+    width: 223px;
+    padding: 0 5px;
+    outline: none;
+    vertical-align: top;
+    border: 1px solid #e1e1e1;
+}
+.loginmt{
+    margin-top: 15px;
+}
+.loginmt.bor{
+    margin-top: 9px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 6px 0 3px;
+}
+.loginmt1.bor{
+    margin-top: 5px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 6px 0 3px;
+}
+.loginBtn{
+    margin-top: 26px;
+    width: 100%;
+    background: #FF6902;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.loginBtn.reg{
+    margin-top: 22px;
+    margin-bottom: -5px;
+}
+.loginBtn:hover{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: .8;
+}
+.loginBtn:active{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.loginmt.text{
+    font-size: 12px;
+    color: #1c1c1c;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 22px;
+    text-align: center;
+}
+.loginmt.text span{
+    cursor: pointer;
+}
+#footLogo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #F9F9F9;
+    text-align: center;
+    padding: 5px 0 0;
+}
+.intBor{
+    outline: none;
+    border: none;
+}
+input{
+    font-size: 18px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #949494;
+    font-size: 15px;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: #949494;
+    font-size: 15px;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #949494;
+    font-size: 15px;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #949494;
+    font-size: 15px;
+}
+.vert{
+    border-left: 1px solid #000;
+    padding-left: 7px;
+    cursor: pointer;
+    display: inline-block;
+    width: 95px;
+    text-align: center;
+}

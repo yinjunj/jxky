@@ -1,0 +1,58 @@
+/*商标*/
+.Box {position: relative;}
+.Box .Box_con {position: relative;
+    margin: 12px 0 16px;}
+.Box .Box_con .brandBtn{position: absolute;
+    cursor: pointer;}
+.brandBtn:hover{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: .8;
+}
+.brandBtn:active{
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.Box .Box_con .conbox {position: relative;overflow: hidden;height: 92px;}
+.Box .Box_con .conbox ul {position: relative;list-style: none;}
+.Box .Box_con .conbox ul li {float: left;width: 152px;height: 90px;margin-right: 2px;overflow: hidden;}
+.Box .Box_con .conbox ul li:first-child {margin-left: 0;}
+.Box .Box_con .conbox ul li img {display: block;width: 152px;height: 90px;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -ms-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+.Box .Box_con .conbox ul li:hover img {
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: .6;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*切换元素个数*/
+/*.Box .BoxSwitch {margin-top: 30px;text-align: center;}*/
+/*.Box .BoxSwitch span {display: inline-block;*display: inline;*zoom: 1;vertical-align: middle;width: 30px;height: 3px;background: #ccc;margin: 0 5px;cursor: pointer;}*/
+/*.Box .BoxSwitch span.cur {background: red;}*/
+
+/*限时特惠*/
+.preference {position: relative;width: 831px;}
+.preference .Box_con {position: relative;}
+.preference .Box_con .brandBtn{position: absolute;
+    cursor: pointer;}
+.preference .Box_con .conbox {position: relative;overflow: hidden;}
+.preference .Box_con .conbox ul {position: relative;list-style: none;}
+.preference .Box_con .conbox ul li {float: left;width: 206px;height: 267px;margin-right: 2px;overflow: hidden;border: 1px solid transparent}
+.preference .Box_con .conbox ul li:first-child {margin-left: 0;}
+.preference .Box_con .conbox ul li:hover{
+    border: 1px solid #ff4502;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: .7;
+}

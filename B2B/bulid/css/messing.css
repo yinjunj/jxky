@@ -1,0 +1,26 @@
+#my-tab a{
+    color: #000;
+    border: none!important;
+}
+#my-tab>li.active{
+    border-bottom: 2px solid #D5282C;;
+}
+#my-tab a:hover{
+    color: #D5282C;
+    background: transparent;
+}
+#my-tab .active a{
+    color: #D5282C;
+}
+.list-group a{
+    border: none;
+    border-top: 1px solid #ddd;
+}
+.hover_a{
+    cursor: pointer;
+    color: #000;
+}
+.hover_a:hover{
+    color: #D5282C;
+    text-decoration: underline;
+}
